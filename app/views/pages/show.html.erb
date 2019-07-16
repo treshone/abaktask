@@ -1,0 +1,9 @@
+<%= show_tree(@page) if @page.has_children? %>
+</br>
+<%= @page.title %></br>
+
+<%= @page.content %></br>
+
+<%= link_to 'Add subpage', new_subpage_path(parent_id: @page.id) %></br>
+<%= link_to 'Update page', edit_subpage_path(@page) %></br>
+<%= link_to 'Main', pages_path %>

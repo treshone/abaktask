@@ -1,0 +1,16 @@
+<%= form_for @page do |f| %>
+
+	<% if @page.errors.any? %>
+		<% @page.errors.full_messages.each do |message| %>
+			<%= message %>
+		<% end %>
+	<% end %>
+
+	<%= f.hidden_field :parent_id %>
+	Name: <%= f.text_field :name %></br>
+	Title: <%= f.text_field :title %></br>
+	Content: <%= f.text_area :content %></br>
+	<%= f.submit %>
+<% end %>	
+
+<%= link_to 'Back', root_path %>

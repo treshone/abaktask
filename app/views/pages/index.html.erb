@@ -1,0 +1,6 @@
+<% @pages.roots.each do |page| %>
+	<%= show_tree(page) %>
+<% end %>
+</br>
+</br>
+<%= link_to 'New page', new_page_path %>
