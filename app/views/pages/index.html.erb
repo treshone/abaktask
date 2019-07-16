@@ -2,10 +2,20 @@
 	<div class="col-3"></div>
 
 	<div class="col-6">
-		<% @pages.roots.each do |page| %>
-			<%= show_tree(page) %>
-		<% end %>
-		</br>
+		<p>
+  			<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    			Show tree
+  			</a>
+  		</p>
+
+		<div class="collapse" id="collapseExample">
+  			<div class="card card-body">
+				<% @pages.roots.each do |page| %>
+					<%= show_tree(page) %>
+				<% end %>
+			</div>
+		</div>
+		
 		<%= link_to 'New page', new_page_path, class: 'btn btn-primary' %>
 	</div>
 	<div class="col-3"></div>

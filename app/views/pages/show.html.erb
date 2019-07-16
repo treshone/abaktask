@@ -2,7 +2,17 @@
 	<div class="col-3"></div>
 
 	<div class="col-6">
-		<%= show_tree(@page) if @page.has_children? %></br>
+		<p>
+  			<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    			Show tree
+  			</a>
+  		</p>
+
+		<div class="collapse" id="collapseExample">
+  			<div class="card card-body">
+    			<%= show_tree(@page) if @page.has_children? %>
+  			</div>
+		</div>
 
 		<h1><%= @page.title %></h1>
 
