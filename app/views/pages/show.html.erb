@@ -1,9 +1,19 @@
-<%= show_tree(@page) if @page.has_children? %>
-</br>
-<%= @page.title %></br>
+<div class="row">
+	<div class="col-3"></div>
 
-<%= @page.content %></br>
+	<div class="col-6">
+		<%= show_tree(@page) if @page.has_children? %></br>
 
-<%= link_to 'Add subpage', new_subpage_path(parent_id: @page.id) %></br>
-<%= link_to 'Update page', edit_subpage_path(@page) %></br>
-<%= link_to 'Main', pages_path %>
+		<h1><%= @page.title %></h1>
+
+        <p><%= @page.content %></p></br>
+
+		<div class="btn-group" role="group">
+			<%= link_to 'Add subpage', new_subpage_path(parent_id: @page.id), class: 'btn btn-primary' %>
+			<%= link_to 'Update page', edit_subpage_path(@page), class: 'btn btn-primary' %>
+			<%= link_to 'Main', pages_path, class: 'btn btn-primary' %>
+		</div>
+	</div>
+
+	<div class="col-3"></div>
+</div>
